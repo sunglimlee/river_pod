@@ -4,6 +4,8 @@ import 'package:river_pod/screen/change_notifier_provider_screen.dart';
 import 'package:river_pod/screen/future_provider_screen.dart';
 import 'package:river_pod/screen/state_notifier_provider_screen.dart';
 import 'package:river_pod/screen/stream_provider_screen.dart';
+import 'package:river_pod/screen/using_select_screen.dart';
+import 'package:river_pod/screen/using_watch_instead_of_read_screen.dart';
 import 'package:river_pod/screen/value_provider_screen.dart';
 import 'package:river_pod/widget/text_button_supplied_by_provider_screen.dart';
 
@@ -64,6 +66,12 @@ class MyHomePage extends StatelessWidget {
             TextButtonSuppliedByProviderScreen(
                 buttonName: 'StateNotifier Provider',
                 child: StateNotifierProviderScreen()),
+            TextButtonSuppliedByProviderScreen(
+                buttonName: 'Using watch instead of read',
+                child: UsingWatchInstreadOfReadScreen()),
+            TextButtonSuppliedByProviderScreen(
+                buttonName: 'Using select',
+                child: UsingSelectScreen()),
           ],
         ),
       ),

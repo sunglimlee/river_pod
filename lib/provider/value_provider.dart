@@ -1,5 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../data/user.dart';
+
 final valueProvider = Provider<int>((ref) {
   return ValueProvider()._initValue;
 });
@@ -11,3 +13,5 @@ class ValueProvider {
 
   int get initValue => _initValue;
 }
+
+final userProvider = Provider<User>((ref) => User(name: '김기옥', age: 76));

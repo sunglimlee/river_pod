@@ -12,8 +12,8 @@ class StreamProviderScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        /*StreamBuilder(
-          stream: ref.watch(apiServiceTestingStreamIntProvider).getStream(),
+        StreamBuilder(
+          stream: ref.watch(streamIntProvider.stream),
           builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
             if (!snapshot.hasData) {
               return const Center(
@@ -22,7 +22,7 @@ class StreamProviderScreen extends ConsumerWidget {
             }
             return Text(snapshot.data.toString());
           },
-        ),*/
+        ),
         Center(
             child: streamIntWatch.when(
                 data: (int data) {

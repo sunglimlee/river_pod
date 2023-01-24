@@ -14,7 +14,8 @@ class FutureProviderScreen extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           FutureBuilder(
-            future: ref.watch(apiServiceTestingFutureIntProvider).getInt(),
+            future: ref.watch(futureIntProvider.future),
+            // or ref.watch(apiServiceTestingFutureIntProvider).getInt()
             builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
               if (snapshot.hasData) {
                 return Container(
@@ -29,6 +30,14 @@ class FutureProviderScreen extends ConsumerWidget {
                 return const Text('혹시 몰라서 else 문 추가');
               }
             },
+          ),
+          Center(
+            child: futureIntWatch.when(
+                data: (int data) {
+                  return Text(data.toString());
+                },
+                error: (error, stackTrace) {},
+                loading: () => const CircularProgressIndicator()),
           ),
         ],
       ),
